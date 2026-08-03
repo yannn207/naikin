@@ -385,120 +385,65 @@ img {
   background-color: var(--brand-orange);
 }
 
-/* PORTFOLIO SECTION */
+/* PORTFOLIO SECTION (CLEAN SIMPLE BANNER ONLY) */
 .portfolio-section {
-  padding: 120px 0;
+  padding: 100px 0;
   background-color: var(--bg-light);
 }
 
-.portfolio-banner-card {
-  background: linear-gradient(135deg, #111318 0%, #1A1D24 100%);
+.portfolio-card-simple {
+  background: #FFFFFF;
   border-radius: var(--radius-lg);
-  padding: 56px;
-  color: #FFFFFF;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 48px;
+  border: 1px solid var(--border-light);
+  padding: 48px 56px;
+  display: flex;
   align-items: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.03);
+  transition: var(--transition-smooth);
 }
 
-.portfolio-banner-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(239, 68, 24, 0.25) 0%, transparent 70%);
-  pointer-events: none;
+.portfolio-card-simple:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  border-color: rgba(239, 68, 24, 0.2);
 }
 
-.portfolio-tag {
+.portfolio-header-text {
+  max-width: 620px;
+}
+
+.portfolio-badge-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 6px 16px;
-  background: rgba(239, 68, 24, 0.15);
-  border: 1px solid rgba(239, 68, 24, 0.3);
+  background: var(--brand-orange-light);
   border-radius: var(--radius-pill);
   color: var(--brand-orange);
   font-family: var(--font-display);
   font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
-.portfolio-banner-title {
+.portfolio-main-title {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 800;
   letter-spacing: -0.03em;
+  color: var(--text-dark);
   line-height: 1.15;
-  margin-bottom: 16px;
 }
 
-.portfolio-banner-desc {
-  font-size: 1.08rem;
-  color: var(--text-light-muted);
-  line-height: 1.6;
-  margin-bottom: 32px;
-}
-
-.portfolio-banner-actions {
+.portfolio-header-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
-}
-
-.portfolio-preview-box {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px dashed rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-md);
-  padding: 36px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition-smooth);
-}
-
-.portfolio-preview-box:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--brand-orange);
-  transform: translateY(-4px);
-}
-
-.portfolio-pdf-icon {
-  width: 72px;
-  height: 72px;
-  border-radius: 20px;
-  background: rgba(239, 68, 24, 0.15);
-  color: var(--brand-orange);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.2rem;
-  margin-bottom: 16px;
-}
-
-.portfolio-pdf-name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-  color: #FFFFFF;
-}
-
-.portfolio-pdf-meta {
-  font-size: 0.85rem;
-  color: var(--text-light-muted);
 }
 
 /* MANIFESTO / OUR WAY SECTION */
@@ -759,9 +704,8 @@ textarea.form-control {
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
-  .portfolio-banner-card {
-    grid-template-columns: 1fr;
-    padding: 36px;
+  .portfolio-card-simple {
+    padding: 36px 28px;
   }
 
   .manifesto-grid {
