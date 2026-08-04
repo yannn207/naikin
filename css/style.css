@@ -702,7 +702,23 @@ textarea.form-control {
   resize: vertical;
 }
 
-/* RESPONSIVE */
+/* NAV TOGGLE BUTTON */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  padding: 8px;
+  transition: var(--transition-fast);
+}
+
+.nav-toggle:hover {
+  color: var(--brand-orange);
+}
+
+/* RESPONSIVE STYLES */
 @media (max-width: 992px) {
   .portfolio-card-simple {
     padding: 36px 28px;
@@ -712,9 +728,213 @@ textarea.form-control {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 70px;
+  }
+
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(243, 244, 246, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid var(--border-light);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: var(--transition-fast);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-menu .btn-nav {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-section {
+    padding-top: 130px;
+    padding-bottom: 70px;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 6px 16px;
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 7.5vw, 3rem);
+    margin-bottom: 20px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 32px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn-orange,
+  .hero-cta-group .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .services-section {
+    padding: 70px 0;
+  }
+
+  .services-header {
+    margin-bottom: 40px;
+  }
+
+  .services-title {
+    font-size: clamp(2rem, 6.5vw, 2.8rem);
+  }
+
+  .services-subtitle {
+    font-size: 1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 28px 24px;
+    border-radius: var(--radius-md);
+  }
+
+  .service-badge {
+    margin-bottom: 20px;
+  }
+
+  .service-name {
+    font-size: 1.35rem;
+  }
+
+  .portfolio-section {
+    padding: 60px 0;
+  }
+
+  .portfolio-card-simple {
+    padding: 32px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .portfolio-main-title {
+    font-size: clamp(1.8rem, 5.5vw, 2.4rem);
+  }
+
+  .portfolio-header-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .portfolio-header-actions .btn-orange,
+  .portfolio-header-actions .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .manifesto-section {
+    padding: 70px 0;
+  }
+
+  .manifesto-img-wrapper {
+    height: 260px;
+    border-radius: var(--radius-md);
+  }
+
+  .manifesto-title {
+    font-size: clamp(1.9rem, 6vw, 2.6rem);
+    margin-bottom: 20px;
+  }
+
+  .manifesto-text {
+    font-size: 1rem;
+  }
+
+  .cta-section {
+    padding: 70px 0;
+  }
+
+  .cta-title {
+    font-size: clamp(2rem, 7vw, 3.2rem);
+  }
+
+  .cta-subtitle {
+    font-size: 1rem;
+    margin-bottom: 32px;
+  }
+
+  .btn-white {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-section {
+    padding: 44px 0;
+  }
 
   .footer-section .container {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 24px;
+  }
+
+  .footer-links {
+    gap: 24px;
+  }
+
+  .footer-link {
+    font-size: 1rem;
+  }
+
+  .contact-modal-card {
+    padding: 28px 20px;
+    border-radius: var(--radius-md);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .contact-modal-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .modal-close-btn {
+    top: 16px;
+    right: 16px;
   }
 }
+
