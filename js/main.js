@@ -127,8 +127,8 @@ const initApp = () => {
         submitBtn.textContent = 'Sending...';
       }
 
-      // Format WhatsApp message
-      const message = `Halo Naikin.ID! 👋\n\nSaya ingin memulai proyek bersama Naikin.ID:\n📌 *Nama/Brand*: ${name}\n✉️ *Email*: ${email}\n💡 *Kebutuhan Service*: ${details}`;
+      // Format WhatsApp message (Clean text without emojis to prevent character encoding issues)
+      const message = `Halo Naikin.ID!\n\nSaya ingin memulai proyek bersama Naikin.ID:\n*Nama/Brand*: ${name}\n*Email*: ${email}\n*Kebutuhan Service*: ${details}`;
 
       // Target WhatsApp Number
       const waNumber = '6287781020876';
